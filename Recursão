@@ -1,0 +1,13 @@
+%caminho com custo
+
+aresta(a,b,3).
+aresta(b,d,1).
+aresta(d,f,1).
+aresta(d,e,4).
+aresta(e,f,2).
+aresta(a,c,4).
+aresta(d,c,1).
+aresta(c,e,5).
+
+distancia(No1,No2,D):- aresta(No1,No2,D).
+distancia(No1,No2,D):- aresta(No1,NoI,X), distancia(NoI,No2,Y), D is X+Y.
